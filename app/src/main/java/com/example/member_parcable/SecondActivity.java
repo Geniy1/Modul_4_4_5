@@ -38,10 +38,10 @@ public class SecondActivity extends AppCompatActivity {
 
         Button sendButton = findViewById(R.id.sendButton);
         sendButton.setOnClickListener(v -> {
-            Member member = new Member("Member Object");
-            Intent resultIntent = new Intent();
-            resultIntent.putExtra("member", member);
-            setResult(RESULT_OK, resultIntent);
+            Member mem = new Member("Golibjon", "Z", "Odinayev");
+            Intent intent1 = new Intent(SecondActivity.this, MainActivity.class);
+            intent1.putExtra("member", mem);
+            startActivity(intent1);
         });
     }
 }

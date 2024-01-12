@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         nameTextView = findViewById(R.id.nameTextView);
         surnameTextView = findViewById(R.id.sname);
         patronymicTextView = findViewById(R.id.patronymicTextView);
@@ -30,26 +29,20 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 intent.putExtra("user", user);
                 startActivity(intent);
-
             }
         });
     }
-
     protected void onResume(Bundle savedInstanceState) {
         super.onResume();
         setContentView(R.layout.activity_main);
-        TextView name = findViewById(R.id.nameTextView);
-        TextView surname = findViewById(R.id.sname);
-        TextView ptText = findViewById(R.id.patronymicTextView);
+        TextView mem1 = findViewById(R.id.textV);
+
 
         Intent intent1 = getIntent();
         if (intent1 != null) {
             Member mem = intent1.getParcelableExtra("member");
+            mem1.setText(mem.getName()+mem.getSurname()+mem.getSurname());
 
-            // Ma'lumotlarni TextViewlarga joylash
-            name.setText(mem.getName());
-            surname.setText(mem.getSurname());
-            ptText.setText(mem.getSurname());
         }
     }
 }

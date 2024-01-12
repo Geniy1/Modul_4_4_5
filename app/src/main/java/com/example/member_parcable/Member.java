@@ -8,7 +8,7 @@ public class Member implements Serializable {
     private String patronymic;
     private String surname;
 
-    public Member(String name) {
+    public Member(String name, String z, String odinayev) {
         this.name = name;
         this.patronymic = patronymic;
         this.surname = surname;
