@@ -37,18 +37,11 @@ public class SecondActivity extends AppCompatActivity {
         }
 
         Button sendButton = findViewById(R.id.sendButton);
-        sendButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Member classidan foydalanib objectni tuzish
-                Member member = new Member("Member Object");
-
-                // Parcelable orqali objectni Intent orqali MainActivityga qaytarish
-                Intent resultIntent = new Intent();
-                resultIntent.putExtra("member", member);
-                setResult(RESULT_OK, resultIntent);
-                finish();
-            }
+        sendButton.setOnClickListener(v -> {
+            Member member = new Member("Member Object");
+            Intent resultIntent = new Intent();
+            resultIntent.putExtra("member", member);
+            setResult(RESULT_OK, resultIntent);
         });
     }
 }
